@@ -1,0 +1,41 @@
+.car-selector-container{
+  background-color: #fff;
+  width: fit-content;
+  height: fit-content;
+  padding-left: 1vw;
+  border-radius: 10px;
+  text-align: center;
+  margin-bottom: 2vw;
+}
+
+
+.cars-selector-button {
+  border: 1 solid;
+  border-color:#e06344a7 ;
+  border-radius: 5px;
+  color: black;
+  font-size: small;
+  background-color: #fff;
+  width: 4vw;
+  height: 3vh;
+  margin: 5px;
+  /* box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px; */
+
+}
+.cars-selector-button:hover {
+  box-shadow: none;
+  background-color: #e06344;
+  /* width: 3.5vw;
+  height: 2.5vh; */
+  color: #fff;
+  /* transition: width 0.25s, height 0.25s; */
+
+}
+
+.car-selector-button-container {
+  display: flex;
+  font-size: small;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: fit-content;
+}
