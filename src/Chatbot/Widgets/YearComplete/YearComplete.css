@@ -1,4 +1,4 @@
-.car-selector-container{
+.property-selector-container{
   background-color: #fff;
   width: fit-content;
   height: fit-content;
@@ -9,27 +9,27 @@
 }
 
 
-.cars-selector-button {
+.propertys-selector-button {
   border: 1 solid;
   border-color:#e06344a7 ;
   border-radius: 5px;
   color: black;
   font-size: small;
   background-color: #fff;
-  width: 4vw;
-  height: 3vh;
+  width: fit-content;
   margin: 5px;
-
+  padding: 0.5vw;
 
 }
-.cars-selector-button:hover {
+.propertys-selector-button:hover {
   box-shadow: none;
   background-color: #e06344;
   color: #fff;
 
+
 }
 
-.car-selector-button-container {
+.property-selector-button-container {
   display: flex;
   font-size: small;
   flex-wrap: wrap;

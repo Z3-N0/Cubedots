@@ -74,7 +74,7 @@ class ActionProvider {
     let resp = "sample options";
     let updmsg = this.createChatBotMessage(resp, {
       loading: true,
-      widget: 'samplewidget',
+      widget: 'YearComplete',
       terminateLoading: true,
     });
     this.updateChatbotState(updmsg);

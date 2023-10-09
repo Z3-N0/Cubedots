@@ -1,5 +1,4 @@
 import React from "react";
-import "./Carousal.css";
 import { Carousel } from 'antd';
 
 const Carousalsample = (props) => {
@@ -17,12 +16,13 @@ const Carousalsample = (props) => {
     height: '160px',
     color: '#fff',
     lineHeight: '160px',
+    
     textAlign: 'center',
     background: '#364d79',
   };
 
   return (
-    <Carousel autoplay>
+    <Carousel autoplay dotPosition='right' fade>
     <div>
       <h3 style={contentStyle}>1</h3>
     </div>

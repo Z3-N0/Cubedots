@@ -4,7 +4,11 @@ class MessageParser {
   }
 
   async parse(message) {
-    if (message === "widget") {
+    if (message === "")
+    {
+      console.log("empty");
+    }
+    else if (message === "widget") {
       this.actionProvider.widgetSample(message);
     } else if(message === 'carousal'){
       this.actionProvider.carousal();

@@ -17,6 +17,14 @@ const App = () => {
     setShowChatbot(false);
   };
 
+  const validator = (input) => {
+    if (!input.replace(/\s/g, '').length)
+      return false;
+    if (input.length > 1) 
+      return true;
+    return false
+  }
+
   return (
     <div class="App-header">
 
@@ -29,6 +37,7 @@ const App = () => {
               messageParser={MessageParser}
               actionProvider={ActionProvider}
               headerText={<TitleLogo toggle={toggle} />}
+              validator={validator}
             />
           }
         />

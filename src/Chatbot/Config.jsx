@@ -4,18 +4,23 @@ import BotAvatar from './Resources/botAvatar'
 
 import SampleWidget from './Widgets/SampleWidget/SampleWidget';
 import Carousal from "./Widgets/Carousal/Carousal";
+import ToS from "./Widgets/ToS/Tos";
+import PropertyType from "./Widgets/PropertyType/PropertyType";
+import YearComplete from "./Widgets/YearComplete/YearComplete"
+
+
+
 
 const config = {
   botName: <TitleLogo />,
   initialMessages: [
     createChatBotMessage(
       "Welcome to CubeDots"
-    ),
-    createChatBotMessage(
-      "Your personal data is very important to us. Before starting our conversation, you can read our Clarification Text Relating Personal Data Processing by clicking on the link."
-    ),
-    createChatBotMessage(
-      "cubedots was founded with a basic principle in mind.. do better. We were pioneers in the Turkish real estate market with technology and continue to lead the way in further evolving technology solutions to heighten our clients experience with us."
+      , {
+        loading: true,
+        widget: 'ToS',
+        terminateLoading: true,
+      }
     ),
   ],
   widgets: [
@@ -26,7 +31,20 @@ const config = {
     {
       widgetName: "carousal",
       widgetFunc: (props) => <Carousal {...props} />,
-    }],
+    },
+    {
+      widgetName: "ToS",
+      widgetFunc: (props) => <ToS {...props} />,
+    },
+    {
+      widgetName: "PropertyType",
+      widgetFunc: (props) => <PropertyType {...props} />,
+    },
+    {
+      widgetName: "YearComplete",
+      widgetFunc: (props) => <YearComplete {...props} />,
+    },
+  ],
   customComponents: {
     botAvatar: (props) => <BotAvatar {...props} />,
   },
