@@ -1,9 +1,11 @@
 import { createChatBotMessage } from "react-chatbot-kit";
 import TitleLogo from "./Resources/logo_cubedots.png";
 import BotAvatar from "./Resources/botAvatar";
+import MyUserAvatar from "./Resources/userAvatar";
 
 import SampleWidget from "./Widgets/SampleWidget/SampleWidget";
-import Carousal from "./Widgets/Carousal/Carousal";
+import Carousal1 from "./Widgets/Carousal1/Carousal1";
+import Carousal2 from "./Widgets/Carousal2/Carousal2";
 import ToS from "./Widgets/ToS/Tos";
 import PropertyType from "./Widgets/PropertyType/PropertyType";
 import YearComplete from "./Widgets/YearComplete/YearComplete";
@@ -13,6 +15,7 @@ import Location from "./Widgets/Location/Location";
 import PriceRange from "./Widgets/PriceRange/PriceRange";
 import Facilities from "./Widgets/Facilities/Facilities";
 import Projects from "./Widgets/Projects/Projects";
+import Details from "./Widgets/Details/Details";
 
 
 const myDate = new Date();
@@ -21,11 +24,11 @@ const hrs = myDate.getHours();
 let greet;
 
 if (hrs < 12)
-  greet = 'Good Morning, Welcome to Cubedots.';
+  greet = 'Hi👋, Good Morning, Welcome to Cubedots.';
 else if (hrs >= 12 && hrs <= 17)
-  greet = 'Good Afternoon, Welcome to Cubedots.';
+  greet = 'Hi👋, Good Afternoon, Welcome to Cubedots.';
 else if (hrs >= 17 && hrs <= 24)
-  greet = 'Good Evening, Welcome to Cubedots.';
+  greet = 'Hi👋, Good Evening, Welcome to Cubedots.';
 const config = {
   botName: <TitleLogo />,
   initialMessages: [
@@ -45,8 +48,12 @@ const config = {
       widgetFunc: (props) => <SampleWidget {...props} />,
     },
     {
-      widgetName: "carousal",
-      widgetFunc: (props) => <Carousal {...props} />,
+      widgetName: "carousal1",
+      widgetFunc: (props) => <Carousal1 {...props} />,
+    },
+    {
+      widgetName: "carousal2",
+      widgetFunc: (props) => <Carousal2 {...props} />,
     },
     {
       widgetName: "ToS",
@@ -63,6 +70,10 @@ const config = {
     {
       widgetName: "PropertyType",
       widgetFunc: (props) => <PropertyType {...props} />,
+    },
+    {
+      widgetName: "Details",
+      widgetFunc: (props) => <Details {...props} />,
     },
     {
       widgetName: "Location",
@@ -87,6 +98,8 @@ const config = {
   ],
   customComponents: {
     botAvatar: (props) => <BotAvatar {...props} />,
+    userAvatar: (props) => <MyUserAvatar {...props} />,
+
   },
 };
 

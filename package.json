@@ -13,6 +13,7 @@
     "react-bootstrap": "^2.9.0",
     "react-chatbot-kit": "^2.1.2",
     "react-dom": "^18.2.0",
+    "react-phone-number-input": "^3.3.6",
     "react-scripts": "5.0.1",
     "react-util-kit": "^0.0.15",
     "web-vitals": "^2.1.4"

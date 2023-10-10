@@ -1,6 +1,7 @@
 import React from "react";
 import "../PrimaryStyle.css";
-import { Checkbox, Form } from "antd";
+import { Form, Input} from "antd";
+
 
 // async function fetchfacilitiesTypes(values) {
 
@@ -30,7 +31,7 @@ const facilitiesTypeSelector = (props) => {
       ...state,
       facilitiesType: Type,
     }));
-    actionProvider.facilitiesType(Type);
+    actionProvider.Details(Type);
   };
 
   // let facilitiesTypeList = facilitiesTypes.map((facilitiesType,index)=>{
@@ -41,31 +42,34 @@ const facilitiesTypeSelector = (props) => {
   //   </button>)});
 
   return (
-    <div className="checkbox-message">
-      <div className="option-selector-container">
-        <Form onFinish={setType}>
-          <div className="checkbox-selector-button-container">
-            <Form.Item name="Airport" valuePropName="checked">
-              <Checkbox>Airport</Checkbox>
-            </Form.Item>
-            <Form.Item name="Public Transport" valuePropName="checked">
-              <Checkbox>Public Transport</Checkbox>
-            </Form.Item>
-            <Form.Item name="Mall" valuePropName="checked">
-              <Checkbox>Mall</Checkbox>
-            </Form.Item>
-            <Form.Item name="Hospital" valuePropName="checked">
-              <Checkbox>Hospital</Checkbox>
-            </Form.Item>
-          </div>
-          <button
-            htmltype="submit"
-            className="checkbox-options-selector-button"
-          >
-            Submit
-          </button>
-        </Form>
-      </div>
+    <div className="react-chatbot-kit-chat-bot-message">
+      <Form onFinish={setType}>
+        <Form.Item
+          name="Phone"
+          label="Phone "
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <Form.Item
+          name="Email"
+          label="Email Id"
+          rules={[
+            {
+              required: true,
+            },
+          ]}
+        >
+          <Input />
+        </Form.Item>
+        <button htmltype="submit" className="checkbox-options-selector-button">
+          Submit
+        </button>
+      </Form>
     </div>
   );
 };

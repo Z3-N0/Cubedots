@@ -69,7 +69,7 @@ const projectsTypeSelector = (props) => {
         </button>
         <button
           className="options-selector-button"
-          onClick={() => setType("UAE")}
+          onClick={() => setType("Zeytinburnu/İstanbul")}
         >
           Zeytinburnu/İstanbul
         </button>

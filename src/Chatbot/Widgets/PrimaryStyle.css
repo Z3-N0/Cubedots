@@ -28,10 +28,75 @@
 
 }
 
+.checkbox-options-selector-button {
+
+  color: white;
+  font-size: small;
+  background-color: #ff7654;
+  width: fit-content;
+  padding: 0.5vw;
+  border: 1px solid #ff7654;
+  border-radius: 5%;
+
+
+}
+
+.checkbox-options-selector-button:hover {
+  box-shadow: none;
+  background-color: white;
+  color: #e06344;
+
+}
+
 .option-selector-button-container {
   display: flex;
   font-size: small;
   flex-wrap: wrap;
   align-items: flex-start;
   width: fit-content;
+}
+
+.checkbox-selector-button-container {
+  display: flex;
+  flex-direction: column;
+  font-size: small;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  width: fit-content;
+}
+
+.checkbox-message {
+  background-color: white;
+  padding-bottom: 0.3vw;
+  padding-right: 0.2vw;
+  border-radius: 5px;
+  color: black;
+  font-weight: medium;
+  position: relative;
+  width: fit-content;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.ant-checkbox-checked .ant-checkbox-inner {
+  background-color: #ff7654;
+  border-color: #ff7654;
+}
+
+
+
+
+.carousal-message{
+  left: 1.2vw;
+  background-color: white;
+  padding: 0.5vw;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: black;
+  font-weight: medium;
+  position: relative;
+  width: fit-content;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin-bottom: 10px;
 }

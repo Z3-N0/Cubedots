@@ -69,6 +69,16 @@ class ActionProvider {
     this.updateChatbotState(updmsg);
   }
 
+  async start() {
+    const resp = "Cubedots was founded with a fundamental principle in mind. do better. We were pioneers in the Turkish real estate market with technology and continue to lead the way in further evolving technology solutions to heighten our client's experience with us.";
+    let updmsg = this.createChatBotMessage(resp, {
+      widget: "Name",
+      loading: true,
+      terminateLoading: true,
+    });
+    this.updateChatbotState(updmsg);
+  }
+
   async name(message) {
     let send = await push(message);
     console.log(send);
@@ -99,13 +109,14 @@ class ActionProvider {
     console.log(send);
     let resp = "Please Enter your Mobile Number";
     let updmsg = this.createChatBotMessage(resp, {
+      widget: "Details",
       loading: true,
       terminateLoading: true,
     });
     this.updateChatbotState(updmsg);
   }
 
-  async phone(message) {
+  async Details(message) {
     let send = await push(message);
     console.log(send);
     const resp = "Please Enter the location you would like to view.";
@@ -157,14 +168,27 @@ class ActionProvider {
   async projectsType(message) {
     let send = await push(message);
     console.log(send);
-    let resp =
-      "Sample images of the chosen property  ";
-    let updmsg = this.createChatBotMessage(resp, {
-      widget: "carousal",
-      loading: true,
-      terminateLoading: true,
-    });
-    this.updateChatbotState(updmsg);
+    if (message === "Nişantaşı, Istanbul") {
+      let resp =
+        "DAP Yapı’s most recent incredible project is about to make an appearance in the most fashionable neighborhood, Nişantaşı. This prestigious neighborhood is known for its various attractions and is considered one of the first places that come to mind when speaking of culture, art, and luxury shopping. Nişantaşı Koru is one of a kind project that redefines luxury, convenience, and elegance altogether.  ";
+      let updmsg = this.createChatBotMessage(resp, {
+        widget: "carousal1",
+        loading: true,
+        terminateLoading: true,
+      });
+      this.updateChatbotState(updmsg);
+    }
+    else {
+      let resp =
+        "Developed by the esteemed Eroğlu Holding, this iconic project is the third tallest building in Europe (excluding Russia) as well as being a landmark of excellence. The project provides extremely high quality at a central location directly on the TEM highway. Skyland has so much to offer from luxurious residential apartments to in-project commercial areas. Skyland grants its residents a dream-like lifestyle.";
+      let updmsg = this.createChatBotMessage(resp, {
+        widget: "carousal2",
+        loading: true,
+        terminateLoading: true,
+      });
+      this.updateChatbotState(updmsg);
+
+    }
   }
 
   async widgetSample() {

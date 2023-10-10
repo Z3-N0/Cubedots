@@ -1,6 +1,6 @@
 import React from "react";
 import LOGO from "./logo.png";
-import { CloseOutlined } from "@ant-design/icons";
+import { MinusOutlined, PoweroffOutlined } from "@ant-design/icons";
 
 const BotAvatar = (props) => {
   return (
@@ -15,7 +15,9 @@ const BotAvatar = (props) => {
         </div>
         <div className="chat-bot-header-title">CubeDots</div>
         <div className="chat-bot-Header-close">
-          <CloseOutlined className="chat-bot-Header-close-icon" onClick={() =>props.toggle()} />
+          
+          <MinusOutlined className="chat-bot-Header-close-icon" onClick={() =>props.toggle()} />
+          <PoweroffOutlined className="chat-bot-Header-power-icon" onClick={() =>props.reset()}/>
         </div>
       </div>
     </div>
