@@ -1,7 +1,7 @@
 import React from "react";
 import "../PrimaryStyle.css";
 
-// async function fetchpropertyTypes(values) {
+// async function fetchoccupationTypes(values) {
 
 //   return new Promise(async(resolve, reject) =>{
 //     fetch('https://vezdu12671.execute-api.us-east-1.amazonaws.com/Stage_1/color-fetch', {
@@ -19,25 +19,25 @@ import "../PrimaryStyle.css";
 //     .catch(error => console.error(error));
 //   })
 // };
-// let propertyTypes = await fetchpropertyTypes('fetch types');
+// let occupationTypes = await fetchoccupationTypes('fetch types');
 
-const propertyTypeSelector = (props) => {
+const occupationTypeSelector = (props) => {
   const { setState, actionProvider } = props;
 
   const setType = async (Type) => {
     setState((state) => ({
       ...state,
-      propertyType: Type,
+      occupationType: Type,
     }));
-    actionProvider.propertyType(Type);
+    actionProvider.occupationType(Type);
     actionProvider.sendResp(Type);
   };
 
-  // let propertyTypeList = propertyTypes.map((propertyType,index)=>{
+  // let occupationTypeList = occupationTypes.map((occupationType,index)=>{
   //   return(<button
-  //       className="propertys-selector-button"
-  //       onClick={() => setType(propertyType.name)}>
-  //         {propertyType.name}
+  //       className="occupations-selector-button"
+  //       onClick={() => setType(occupationType.name)}>
+  //         {occupationType.name}
   //   </button>)});
 
   return (
@@ -45,31 +45,25 @@ const propertyTypeSelector = (props) => {
       <div className="option-selector-button-container">
         <button
           className="options-selector-button"
-          onClick={() => setType("Apartments")}
+          onClick={() => setType("Real Estate Agency")}
         >
-          Apartments
+          Real Estate Agency
         </button>
         <button
           className="options-selector-button"
-          onClick={() => setType("Villas")}
+          onClick={() => setType("Developer")}
         >
-          Villas
+          Developer
         </button>
         <button
           className="options-selector-button"
-          onClick={() => setType("Residential")}
+          onClick={() => setType("Other")}
         >
-          Residential
-        </button>
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Commercial")}
-        >
-          Commercial
+          Other
         </button>
       </div>
     </div>
   );
 };
 
-export default propertyTypeSelector;
+export default occupationTypeSelector;

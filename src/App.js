@@ -11,7 +11,7 @@ import BotButton from "./Chatbot/Resources/botButton";
 import TitleLogo from "./Chatbot/Resources/chatBotHeader";
 
 const App = () => {
-  const [showChatbot, setShowChatbot] = useState(true);
+  const [showChatbot, setShowChatbot] = useState(false);
 
   const toggle = () => {
     setShowChatbot(false);

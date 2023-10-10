@@ -1,7 +1,7 @@
 import React from "react";
 import "./YearComplete.css";
 
-// async function fetchpropertyTypes(values) {
+// async function fetchyearTypes(values) {
 
 //   return new Promise(async(resolve, reject) =>{
 //     fetch('https://vezdu12671.execute-api.us-east-1.amazonaws.com/Stage_1/color-fetch', {
@@ -19,50 +19,50 @@ import "./YearComplete.css";
 //     .catch(error => console.error(error));
 //   })
 // };
-// let propertyTypes = await fetchpropertyTypes('fetch types');
+// let yearTypes = await fetchyearTypes('fetch types');
 
-const propertyTypeSelector = (props) => {
+const yearTypeSelector = (props) => {
   const { setState, actionProvider } = props;
 
   const setType = async (Type) => {
     setState((state) => ({
       ...state,
-      propertyType: Type,
+      yearType: Type,
     }));
     actionProvider.handleResp(Type);
     actionProvider.sendResp(Type);
   };
 
-  // let propertyTypeList = propertyTypes.map((propertyType,index)=>{
+  // let yearTypeList = yearTypes.map((yearType,index)=>{
   //   return(<button
-  //       className="propertys-selector-button"
-  //       onClick={() => setType(propertyType.name)}>
-  //         {propertyType.name}
+  //       className="years-selector-button"
+  //       onClick={() => setType(yearType.name)}>
+  //         {yearType.name}
   //   </button>)});
 
   return (
-    <div className="property-selector-container">
-      <div className="property-selector-button-container">
+    <div className="year-selector-container">
+      <div className="year-selector-button-container">
         <button
-          className="propertys-selector-button"
+          className="years-selector-button"
           onClick={() => setType("Ready to Move")}
         >
           Ready to move
         </button>
         <button
-          className="propertys-selector-button"
+          className="years-selector-button"
           onClick={() => setType("2023")}
         >
           2023
         </button>
         <button
-          className="propertys-selector-button"
+          className="years-selector-button"
           onClick={() => setType("2024")}
         >
           2024
         </button>
         <button
-          className="propertys-selector-button"
+          className="years-selector-button"
           onClick={() => setType("2025")}
         >
           2025
@@ -72,4 +72,4 @@ const propertyTypeSelector = (props) => {
   );
 };
 
-export default propertyTypeSelector;
+export default yearTypeSelector;

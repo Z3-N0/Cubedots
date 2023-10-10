@@ -1,7 +1,7 @@
 import React from "react";
 import "../PrimaryStyle.css";
 
-// async function fetchpropertyTypes(values) {
+// async function fetchpriceRangeTypes(values) {
 
 //   return new Promise(async(resolve, reject) =>{
 //     fetch('https://vezdu12671.execute-api.us-east-1.amazonaws.com/Stage_1/color-fetch', {
@@ -19,25 +19,25 @@ import "../PrimaryStyle.css";
 //     .catch(error => console.error(error));
 //   })
 // };
-// let propertyTypes = await fetchpropertyTypes('fetch types');
+// let priceRangeTypes = await fetchpriceRangeTypes('fetch types');
 
-const propertyTypeSelector = (props) => {
+const priceRangeTypeSelector = (props) => {
   const { setState, actionProvider } = props;
 
   const setType = async (Type) => {
     setState((state) => ({
       ...state,
-      propertyType: Type,
+      priceRangeType: Type,
     }));
-    actionProvider.propertyType(Type);
+    actionProvider.priceRangeType(Type);
     actionProvider.sendResp(Type);
   };
 
-  // let propertyTypeList = propertyTypes.map((propertyType,index)=>{
+  // let priceRangeTypeList = priceRangeTypes.map((priceRangeType,index)=>{
   //   return(<button
-  //       className="propertys-selector-button"
-  //       onClick={() => setType(propertyType.name)}>
-  //         {propertyType.name}
+  //       className="priceRanges-selector-button"
+  //       onClick={() => setType(priceRangeType.name)}>
+  //         {priceRangeType.name}
   //   </button>)});
 
   return (
@@ -45,31 +45,25 @@ const propertyTypeSelector = (props) => {
       <div className="option-selector-button-container">
         <button
           className="options-selector-button"
-          onClick={() => setType("Apartments")}
+          onClick={() => setType("$1M to $3M")}
         >
-          Apartments
+          $1M to $3M
         </button>
         <button
           className="options-selector-button"
-          onClick={() => setType("Villas")}
+          onClick={() => setType("$4M to $6M")}
         >
-          Villas
+          $4M to $6M
         </button>
         <button
           className="options-selector-button"
-          onClick={() => setType("Residential")}
+          onClick={() => setType("$7M to $10M")}
         >
-          Residential
-        </button>
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Commercial")}
-        >
-          Commercial
+          $7M to $10M
         </button>
       </div>
     </div>
   );
 };
 
-export default propertyTypeSelector;
+export default priceRangeTypeSelector;

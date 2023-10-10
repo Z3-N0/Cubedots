@@ -20,6 +20,7 @@
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    cursor: pointer;
 }
 
 .app-chatbot-button-icon {
@@ -34,7 +35,7 @@
 .chat-bot-header-container {
   font-family: "Poppins", sans-serif;
   height: auto;
-  width: 8vw;
+  width: auto;
   display: flex;
   flex-direction: row;
 }
@@ -330,7 +331,7 @@
 }
 
 .react-chatbot-kit-chat-inner-container {
-  height: 500px;
+  height: 470px;
   background-color: #fff;
   border-radius: 5px;
   border-top-left-radius: 20px;
@@ -362,7 +363,7 @@
   color: black;
   padding: 0 0.75vw 1vw 0.75vw;
   overflow: scroll;
-  height: 400px;
+  height: 360px;
 }
 
 .react-chatbot-kit-chat-input {

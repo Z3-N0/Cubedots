@@ -3,17 +3,20 @@ class MessageParser {
     this.actionProvider = actionProvider;
   }
 
+
+
   async parse(message) {
-    if (message === "")
-    {
-      console.log("empty");
-    }
-    else if (message === "widget") {
+    const name = /^[a-zA-Z]+$/;
+    const number = /^\d{10}$/;
+    if (message === "widget") {
       this.actionProvider.widgetSample(message);
-    } else if(message === 'carousal'){
+    } else if (message === "carousal") {
       this.actionProvider.carousal();
-    }
-    else {
+    } else if (name.test(message)){
+      this.actionProvider.name(message);
+    }else if (number.test(message)){
+      this.actionProvider.phone(message);
+    }else {
       this.actionProvider.handleResp(message);
     }
   }

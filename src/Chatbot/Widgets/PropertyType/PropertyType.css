@@ -10,22 +10,21 @@
 
 
 .propertys-selector-button {
-  border: 1 solid;
-  border-color:#e06344a7 ;
-  border-radius: 5px;
-  color: black;
+  color: white;
   font-size: small;
-  background-color: #fff;
+  background-color: #ff7654;
   width: fit-content;
   margin: 5px;
   padding: 0.5vw;
+  border: 1px solid #ff7654;
+  border-radius: 5%;
 
 }
+
 .propertys-selector-button:hover {
   box-shadow: none;
-  background-color: #e06344;
-  color: #fff;
-
+  background-color: white;
+  color: #e06344;
 
 }
 

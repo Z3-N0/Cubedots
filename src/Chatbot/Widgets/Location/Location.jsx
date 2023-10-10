@@ -1,7 +1,7 @@
 import React from "react";
 import "../PrimaryStyle.css";
 
-// async function fetchpropertyTypes(values) {
+// async function fetchlocationTypes(values) {
 
 //   return new Promise(async(resolve, reject) =>{
 //     fetch('https://vezdu12671.execute-api.us-east-1.amazonaws.com/Stage_1/color-fetch', {
@@ -19,25 +19,25 @@ import "../PrimaryStyle.css";
 //     .catch(error => console.error(error));
 //   })
 // };
-// let propertyTypes = await fetchpropertyTypes('fetch types');
+// let locationTypes = await fetchlocationTypes('fetch types');
 
-const propertyTypeSelector = (props) => {
+const locationTypeSelector = (props) => {
   const { setState, actionProvider } = props;
 
   const setType = async (Type) => {
     setState((state) => ({
       ...state,
-      propertyType: Type,
+      locationType: Type,
     }));
-    actionProvider.propertyType(Type);
+    actionProvider.locationType(Type);
     actionProvider.sendResp(Type);
   };
 
-  // let propertyTypeList = propertyTypes.map((propertyType,index)=>{
+  // let locationTypeList = locationTypes.map((locationType,index)=>{
   //   return(<button
-  //       className="propertys-selector-button"
-  //       onClick={() => setType(propertyType.name)}>
-  //         {propertyType.name}
+  //       className="locations-selector-button"
+  //       onClick={() => setType(locationType.name)}>
+  //         {locationType.name}
   //   </button>)});
 
   return (
@@ -45,31 +45,19 @@ const propertyTypeSelector = (props) => {
       <div className="option-selector-button-container">
         <button
           className="options-selector-button"
-          onClick={() => setType("Apartments")}
+          onClick={() => setType("Turkey")}
         >
-          Apartments
+          Turkey
         </button>
         <button
           className="options-selector-button"
-          onClick={() => setType("Villas")}
+          onClick={() => setType("UAE")}
         >
-          Villas
-        </button>
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Residential")}
-        >
-          Residential
-        </button>
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Commercial")}
-        >
-          Commercial
+          UAE
         </button>
       </div>
     </div>
   );
 };
 
-export default propertyTypeSelector;
+export default locationTypeSelector;
