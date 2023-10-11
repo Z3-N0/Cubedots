@@ -91,7 +91,8 @@
 }
 
 .react-chatbot-kit-user-avatar-icon {
-  fill: grey;
+  color: white;
+  fill: white;
   width: 30px;
   height: 30px;
 }

@@ -42,7 +42,7 @@ const facilitiesTypeSelector = (props) => {
   //   </button>)});
 
   return (
-    <div className="react-chatbot-kit-chat-bot-message">
+    <div className="react-chatbot-kit-chat-bot-message-forms">
       <Form onFinish={setType}>
         <Form.Item
           name="Phone"
@@ -50,6 +50,7 @@ const facilitiesTypeSelector = (props) => {
           rules={[
             {
               required: true,
+              message: "The input is not valid Phone number!",
             },
           ]}
         >
@@ -61,6 +62,8 @@ const facilitiesTypeSelector = (props) => {
           rules={[
             {
               required: true,
+              type: "email",
+              message: "The input is not valid E-mail!",
             },
           ]}
         >

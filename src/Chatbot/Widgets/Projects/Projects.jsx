@@ -69,12 +69,6 @@ const projectsTypeSelector = (props) => {
         </button>
         <button
           className="options-selector-button"
-          onClick={() => setType("Zeytinburnu/İstanbul")}
-        >
-          Zeytinburnu/İstanbul
-        </button>
-        <button
-          className="options-selector-button"
           onClick={() => setType("Maslak, Istanbul")}
         >
           Maslak, Istanbul

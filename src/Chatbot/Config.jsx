@@ -6,6 +6,7 @@ import MyUserAvatar from "./Resources/userAvatar";
 import SampleWidget from "./Widgets/SampleWidget/SampleWidget";
 import Carousal1 from "./Widgets/Carousal1/Carousal1";
 import Carousal2 from "./Widgets/Carousal2/Carousal2";
+import Carousal3 from "./Widgets/Carousal3/Carousal3";
 import ToS from "./Widgets/ToS/Tos";
 import PropertyType from "./Widgets/PropertyType/PropertyType";
 import YearComplete from "./Widgets/YearComplete/YearComplete";
@@ -54,6 +55,10 @@ const config = {
     {
       widgetName: "carousal2",
       widgetFunc: (props) => <Carousal2 {...props} />,
+    },
+    {
+      widgetName: "carousal3",
+      widgetFunc: (props) => <Carousal3 {...props} />,
     },
     {
       widgetName: "ToS",

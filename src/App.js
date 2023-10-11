@@ -11,7 +11,6 @@ import config from "./Chatbot/Config";
 import BotButton from "./Chatbot/Resources/botButton";
 import TitleLogo from "./Chatbot/Resources/chatBotHeader";
 
-
 const App = () => {
   const [showChatbot, setShowChatbot] = useState(false);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -40,37 +39,38 @@ const App = () => {
   return (
     <div className="App-header">
       <div className="app-chatbot-container">
-        <div className="modal-box"> 
-        <Modal
-          title="End Conversation"
-          open={isModalOpen}
-          footer={[
-            <Button key="back" onClick={handleCancel}>
-              No
-            </Button>,
-            <Button key="submit" type="primary" onClick={handleOk}>
-              Yes
-            </Button>,
-          ]}
-          width={200}
-          bodyStyle={{height: 50}}
-        >
-          <p>Are you sure you want to end conversation?</p>
-        </Modal>
-        </div>
+        <div className="modal-box"></div>
         <div>
-        <ConditionallyRender
-          ifTrue={showChatbot}
-          show={
-            <Chatbot
-              config={config}
-              messageParser={MessageParser}
-              actionProvider={ActionProvider}
-              headerText={<TitleLogo toggle={toggle} reset={reset} />}
-              validator={validator}
-            />
-          }
-        />
+          <ConditionallyRender
+            ifTrue={showChatbot}
+            show={
+              <>
+                <Modal
+                  title="End Conversation"
+                  open={isModalOpen}
+                  footer={[
+                    <Button key="back" onClick={handleCancel}>
+                      No
+                    </Button>,
+                    <Button key="submit" type="primary" onClick={handleOk}>
+                      Yes
+                    </Button>,
+                  ]}
+                  width={200}
+                  bodyStyle={{ height: 50 }}
+                >
+                  <p>Are you sure you want to end conversation?</p>
+                </Modal>
+                <Chatbot
+                  config={config}
+                  messageParser={MessageParser}
+                  actionProvider={ActionProvider}
+                  headerText={<TitleLogo toggle={toggle} reset={reset} />}
+                  validator={validator}
+                />
+              </>
+            }
+          />
         </div>
       </div>
 

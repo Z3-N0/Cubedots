@@ -1,5 +1,5 @@
 import React from "react";
-import Logo from "./person-circle.svg";
+import Logo from "./user.png";
 
 const BotAvatar = () => {
   return (

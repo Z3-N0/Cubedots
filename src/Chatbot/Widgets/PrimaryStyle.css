@@ -2,7 +2,7 @@
   background-color: #fff;
   width: fit-content;
   height: fit-content;
-  padding-left: 1vw;
+  padding-left: 2vw;
   border-radius: 10px;
   text-align: center;
   margin-bottom: 0.5vw;
@@ -29,7 +29,6 @@
 }
 
 .checkbox-options-selector-button {
-
   color: white;
   font-size: small;
   background-color: #ff7654;
@@ -66,6 +65,7 @@
 }
 
 .checkbox-message {
+  margin-left: 2vw;
   background-color: white;
   padding-bottom: 0.3vw;
   padding-right: 0.2vw;
@@ -84,10 +84,24 @@
 }
 
 
-
-
 .carousal-message{
-  left: 1.2vw;
+  left: 1.9vw;
+  background-color: white;
+  padding: 0.5vw;
+  border-radius: 5px;
+  font-size: 0.8rem;
+  color: black;
+  font-weight: medium;
+  position: relative;
+  width: 12vw;
+  text-align: left;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  margin-bottom: 10px;
+}
+
+
+.react-chatbot-kit-chat-bot-message-forms {
+  margin-left: 2vw;
   background-color: white;
   padding: 0.5vw;
   border-radius: 5px;
@@ -98,5 +112,4 @@
   width: fit-content;
   text-align: left;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-  margin-bottom: 10px;
 }
