@@ -82,7 +82,7 @@ class ActionProvider {
   async name(message) {
     let send = await push(message);
     console.log(send);
-    const resp = "Select your occupation";
+    const resp = "Firstly, may I know who you are contacting us as?";
     let updmsg = this.createChatBotMessage(resp, {
       widget: "Occupation",
       loading: true,
@@ -168,38 +168,16 @@ class ActionProvider {
   async projectsType(message) {
     let send = await push(message);
     console.log(send);
-    if (message === "Nişantaşı, Istanbul") {
-      let resp =
-        "DAP Yapı’s most recent incredible project is about to make an appearance in the most fashionable neighborhood, Nişantaşı. This prestigious neighborhood is known for its various attractions and is considered one of the first places that come to mind when speaking of culture, art, and luxury shopping. Nişantaşı Koru is one of a kind project that redefines luxury, convenience, and elegance altogether.  ";
+    let resp =
+        "Here are some details on the chosen project:";
       let updmsg = this.createChatBotMessage(resp, {
         widget: "carousal1",
         loading: true,
         terminateLoading: true,
       });
       this.updateChatbotState(updmsg);
-    }
-    else if(message === 'Bağcılar'){
-      let resp =
-        "Valory Güneşli is a residential project that’s being developed by Yiğitoğlu Chemical Industry. This development consists of 2 residential blocks, located in the Bagcilar district close to Basin Ekspres, the residence boasts a prime location that is close to everything you need, including shopping centers, restaurants, educational institutions, schools, and transportation options. The residence features a total area of 43,975.70 m² and consists of 16 floors with 216 units, ranging from 1+1 to 4+1 and duplex apartments. The apartments are designed with the utmost care and attention to detail, with contemporary interiors that reflect the modern taste of residents. Each apartment comes with high-quality materials, top-of-the-line appliances, and spacious balconies with breathtaking views of the city.";
-      let updmsg = this.createChatBotMessage(resp, {
-        widget: "carousal3",
-        loading: true,
-        terminateLoading: true,
-      });
-      this.updateChatbotState(updmsg);
-
-    }
-    else {
-      let resp =
-        "Developed by the esteemed Eroğlu Holding, this iconic project is the third tallest building in Europe (excluding Russia) as well as being a landmark of excellence. The project provides extremely high quality at a central location directly on the TEM highway. Skyland has so much to offer from luxurious residential apartments to in-project commercial areas. Skyland grants its residents a dream-like lifestyle.";
-      let updmsg = this.createChatBotMessage(resp, {
-        widget: "carousal2",
-        loading: true,
-        terminateLoading: true,
-      });
-      this.updateChatbotState(updmsg);
-
-    }
+    
+    
   }
 
   async widgetSample() {

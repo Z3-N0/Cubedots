@@ -1,25 +1,21 @@
+/* eslint-disable array-callback-return */
 import React from "react";
 import "../PrimaryStyle.css";
+import { getAllProject } from "../../api";
 
-// async function fetchprojectsTypes(values) {
+let initialList = [];
 
-//   return new Promise(async(resolve, reject) =>{
-//     fetch('https://vezdu12671.execute-api.us-east-1.amazonaws.com/Stage_1/color-fetch', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(values)
-//     })
-//    .then(response => response.json())
-//     .then(data => {
-//       resolve(data)
-//       console.log(data)
-//     })
-//     .catch(error => console.error(error));
-//   })
-// };
-// let projectsTypes = await fetchprojectsTypes('fetch types');
+async function fetchProjectTypes() {
+  await Promise.all([getAllProject()]).then((values) => {
+    values[0].map((value) => {
+      initialList.push(value.city);
+    });
+  });
+  // console.log("initial list:", initialList)
+  return initialList;
+}
+
+let projectsTypes = await fetchProjectTypes();
 
 const projectsTypeSelector = (props) => {
   const { setState, actionProvider } = props;
@@ -33,53 +29,20 @@ const projectsTypeSelector = (props) => {
     actionProvider.sendResp(Type);
   };
 
-  // let projectsTypeList = projectsTypes.map((projectsType,index)=>{
-  //   return(<button
-  //       className="projectss-selector-button"
-  //       onClick={() => setType(projectsType.name)}>
-  //         {projectsType.name}
-  //   </button>)});
+  let projectsTypeList = projectsTypes.map((projectsType, index) => {
+    return (
+      <button
+        className="options-selector-button"
+        onClick={() => setType(projectsType)}
+      >
+        {projectsType}
+      </button>
+    );
+  });
 
   return (
     <div className="option-selector-container">
-      <div className="option-selector-button-container">
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Bağcılar")}
-        >
-          Bağcılar
-        </button>
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Istanbul")}
-        >
-          Istanbul
-        </button>
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Zeytinburnu/İstanbul")}
-        >
-          Zeytinburnu/İstanbul
-        </button>
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Nişantaşı, Istanbul")}
-        >
-          Nişantaşı, Istanbul
-        </button>
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Maslak, Istanbul")}
-        >
-          Maslak, Istanbul
-        </button>
-        <button
-          className="options-selector-button"
-          onClick={() => setType("Beylikdüzü, Istanbul")}
-        >
-          Beylikdüzü, Istanbul
-        </button>
-      </div>
+      <div className="option-selector-button-container">{projectsTypeList}</div>
     </div>
   );
 };

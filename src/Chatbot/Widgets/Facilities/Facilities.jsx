@@ -1,26 +1,30 @@
+/* eslint-disable array-callback-return */
 import React from "react";
 import "../PrimaryStyle.css";
 import { Checkbox, Form } from "antd";
+import { getAllProject } from "../../api";
 
-// async function fetchfacilitiesTypes(values) {
+let initialList = [];
+let buffer = [];
+function removeDuplicates(arr) {
+  return [...new Set(arr)];
+}
 
-//   return new Promise(async(resolve, reject) =>{
-//     fetch('https://vezdu12671.execute-api.us-east-1.amazonaws.com/Stage_1/color-fetch', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(values)
-//     })
-//    .then(response => response.json())
-//     .then(data => {
-//       resolve(data)
-//       console.log(data)
-//     })
-//     .catch(error => console.error(error));
-//   })
-// };
-// let facilitiesTypes = await fetchfacilitiesTypes('fetch types');
+async function fetchLocationTypes() {
+  await Promise.all([getAllProject()]).then((values) => {
+    values[0].map((value) => {
+      buffer = value.amenities;
+      buffer.map((val) => {
+        initialList.push(val);
+      });
+    });
+  });
+  // console.log("initial list:", initialList)
+  return initialList;
+}
+
+let amenities = await fetchLocationTypes();
+amenities = removeDuplicates(amenities);
 
 const facilitiesTypeSelector = (props) => {
   const { setState, actionProvider } = props;
@@ -33,30 +37,20 @@ const facilitiesTypeSelector = (props) => {
     actionProvider.facilitiesType(Type);
   };
 
-  // let facilitiesTypeList = facilitiesTypes.map((facilitiesType,index)=>{
-  //   return(<button
-  //       className="facilitiess-selector-button"
-  //       onClick={() => setType(facilitiesType.name)}>
-  //         {facilitiesType.name}
-  //   </button>)});
+  let amenitiesList = amenities.map((facility, index) => {
+    return (
+      <Form.Item name={facility} valuePropName="checked">
+        <Checkbox>{facility}</Checkbox>
+      </Form.Item>
+    );
+  });
 
   return (
     <div className="checkbox-message">
       <div className="option-selector-container">
         <Form onFinish={setType}>
           <div className="checkbox-selector-button-container">
-            <Form.Item name="Airport" valuePropName="checked">
-              <Checkbox>Airport</Checkbox>
-            </Form.Item>
-            <Form.Item name="Public Transport" valuePropName="checked">
-              <Checkbox>Public Transport</Checkbox>
-            </Form.Item>
-            <Form.Item name="Mall" valuePropName="checked">
-              <Checkbox>Mall</Checkbox>
-            </Form.Item>
-            <Form.Item name="Hospital" valuePropName="checked">
-              <Checkbox>Hospital</Checkbox>
-            </Form.Item>
+            {amenitiesList}
           </div>
           <button
             htmltype="submit"
