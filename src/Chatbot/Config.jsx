@@ -21,8 +21,8 @@ import Details from "./Widgets/Details/Details";
 
 const myDate = new Date();
 const hrs = myDate.getHours();
-
 let greet;
+
 
 if (hrs < 12)
   greet = 'Hi👋, Good Morning, Welcome to Cubedots.';

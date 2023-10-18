@@ -10,9 +10,9 @@
 
 
 .options-selector-button {
-  color: white;
+  color: #e06344;
   font-size: small;
-  background-color: #ff7654;
+  background-color: white;
   width: fit-content;
   margin: 5px;
   padding: 0.5vw;
@@ -22,10 +22,10 @@
 }
 
 .options-selector-button:hover {
+  cursor: pointer;
   box-shadow: none;
-  background-color: white;
-  color: #e06344;
-
+  background-color: #ff7654;
+  color: white;
 }
 
 .checkbox-options-selector-button {
@@ -35,7 +35,7 @@
   width: fit-content;
   padding: 0.5vw;
   border: 1px solid #ff7654;
-  border-radius: 5%;
+  border-radius: 7.5%;
 
 
 }

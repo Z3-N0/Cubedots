@@ -1,49 +1,11 @@
-// import { Amplify, Interactions } from "aws-amplify";
-//import { AWSLexV2Provider } from '@aws-amplify/interactions';
-// import awsconfig from "./aws-exports";
 import { createClientMessage } from "react-chatbot-kit";
 
-// Amplify.configure({
-//   Auth: {
-//     identityPoolId: "us-east-1:ee852981-5624-4239-b5dc-93c4b8c505c8",
-//     region: "us-east-1",
-//   },
-//   Interactions: {
-//     bots: {
-//       Intercity_lexuser: {
-//         name: "Intercity_lexuser",
-//         alias: "$LATEST",
-//         region: "us-east-1",
-//       },
-//     },
-//   },
-// });
 
-// Amplify.configure(awsconfig);
 
 async function push(message) {
   console.log(message);
   return "Received";
 }
-
-// async function fetchColor(values) {
-
-//   return new Promise(async(resolve, reject) =>{
-//     fetch('https://vezdu12671.execute-api.us-east-1.amazonaws.com/Stage_1/color-fetch', {
-//       method: 'POST',
-//       headers: {
-//         'Content-Type': 'application/json'
-//       },
-//       body: JSON.stringify(values)
-//     })
-//    .then(response => response.json())
-//     .then(data => {
-//       resolve(data['body'])
-//     })
-//     .catch(error => console.error(error));
-
-//   })
-// };
 
 class ActionProvider {
   constructor(createChatBotMessage, setStateFunc) {

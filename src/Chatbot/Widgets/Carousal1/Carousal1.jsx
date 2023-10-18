@@ -8,12 +8,12 @@ import "../PrimaryStyle.css";
 // import img4 from "../../../Chatbot/Resources/NiKoru/4.jpg";
 // import {RightCircleOutlined , LeftCircleOutlined, LinkOutlined} from "@ant-design/icons";
 
-import { getAllProject } from "../../api";
+import { getAllProjectDetails } from "../../api";
 
 let initialList = [];
 
 async function fetchProjects() {
-  await Promise.all([getAllProject()]).then((values) => {
+  await Promise.all([getAllProjectDetails()]).then((values) => {
     values[0].map((value) => {
       initialList.push(value);
     });

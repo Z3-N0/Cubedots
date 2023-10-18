@@ -46,7 +46,7 @@ const awsConfig = {
 Amplify.configure(awsConfig);
 
 const App = () => {
-  const [showChatbot, setShowChatbot] = useState(false);
+  const [showChatbot, setShowChatbot] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   const toggle = () => {

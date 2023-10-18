@@ -1,33 +1,23 @@
 /* eslint-disable array-callback-return */
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../PrimaryStyle.css";
-import { Checkbox, Form } from "antd";
-import { getAllProject } from "../../api";
+import { Checkbox, Form, Spin } from "antd";
 
-let initialList = [];
-let buffer = [];
-function removeDuplicates(arr) {
-  return [...new Set(arr)];
-}
+const FacilitiesTypeSelector = (props) => {
+  const { setState, actionProvider } = props;
+  const [amenity, setAmenity] = useState([]);
 
-async function fetchLocationTypes() {
-  await Promise.all([getAllProject()]).then((values) => {
-    values[0].map((value) => {
-      buffer = value.amenities;
+  useEffect(() => {
+    let temp = [];
+    let buffer;
+    props?.state?.dataBlob?.map((prop) => {
+      buffer = prop.amenities;
       buffer.map((val) => {
-        initialList.push(val);
+        temp.push(val);
       });
     });
-  });
-  // console.log("initial list:", initialList)
-  return initialList;
-}
-
-let amenities = await fetchLocationTypes();
-amenities = removeDuplicates(amenities);
-
-const facilitiesTypeSelector = (props) => {
-  const { setState, actionProvider } = props;
+    setAmenity([...new Set(temp)]);
+  }, [props]);
 
   const setType = async (Type) => {
     setState((state) => ({
@@ -37,9 +27,9 @@ const facilitiesTypeSelector = (props) => {
     actionProvider.facilitiesType(Type);
   };
 
-  let amenitiesList = amenities.map((facility, index) => {
+  let amenitiesList = amenity.map((facility, index) => {
     return (
-      <Form.Item name={facility} valuePropName="checked">
+      <Form.Item name={facility} valuePropName="checked" key={index}>
         <Checkbox>{facility}</Checkbox>
       </Form.Item>
     );
@@ -50,7 +40,15 @@ const facilitiesTypeSelector = (props) => {
       <div className="option-selector-container">
         <Form onFinish={setType}>
           <div className="checkbox-selector-button-container">
-            {amenitiesList}
+            {amenity?.length > 0 ? (
+              amenitiesList
+            ) : (
+              <Spin
+                style={{
+                  color: "orange",
+                }}
+              />
+            )}
           </div>
           <button
             htmltype="submit"
@@ -64,4 +62,4 @@ const facilitiesTypeSelector = (props) => {
   );
 };
 
-export default facilitiesTypeSelector;
+export default FacilitiesTypeSelector;
