@@ -1,12 +1,7 @@
 /* eslint-disable array-callback-return */
 import React from "react";
 import "../PrimaryStyle.css";
-// import { Carousel, Row, Col } from "antd";
-// import img1 from "../../../Chatbot/Resources/NiKoru/1.jpg";
-// import img2 from "../../../Chatbot/Resources/NiKoru/2.jpg";
-// import img3 from "../../../Chatbot/Resources/NiKoru/3.jpg";
-// import img4 from "../../../Chatbot/Resources/NiKoru/4.jpg";
-// import {RightCircleOutlined , LeftCircleOutlined, LinkOutlined} from "@ant-design/icons";
+
 
 import { getAllProjectDetails } from "../../api";
 
@@ -18,7 +13,7 @@ async function fetchProjects() {
       initialList.push(value);
     });
   });
-  // console.log("initial list:", initialList)
+
   return initialList;
 }
 
@@ -26,7 +21,6 @@ let projects = await fetchProjects();
 
 const Carousalsample = (props) => {
   let smallDesc = "";
-  let medDesc = "";
   let projname = "";
   let proj = props.state.projectsType.trim();
   // const slider = useRef(null);
@@ -35,7 +29,6 @@ const Carousalsample = (props) => {
     let name = value.city.trim();
     if (name === proj) {
       smallDesc = value.smallDescription;
-      medDesc = value.mediumDescription;
       projname = value.title;
     }
   });
@@ -54,7 +47,6 @@ const Carousalsample = (props) => {
     <>
       <div className="carousal-message">{projname}</div>
       <div className="carousal-message">{smallDesc}</div>
-      <div className="carousal-message">{medDesc}</div>
       {/* <Row align={"middle"}>
       <Col span={2}>
         <LeftCircleOutlined style={{fontSize: 25, color: "grey"}} onClick={() => slider.current.prev()}/>

@@ -69,7 +69,7 @@ class ActionProvider {
   async propertyType(message) {
     let send = await push(message);
     console.log(send);
-    let resp = "Please Enter your Mobile Number";
+    let resp = "Great! Before we redirect you, could you please provide your phone number and email address?";
     let updmsg = this.createChatBotMessage(resp, {
       widget: "Details",
       loading: true,

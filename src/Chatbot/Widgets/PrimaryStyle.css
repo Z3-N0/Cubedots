@@ -8,11 +8,25 @@
   margin-bottom: 0.5vw;
 }
 
+.checkbox-selector-container{
+  font-size: x-small;
+  align-items: left;
+  padding-top: 0.2vw;
+  background-color: #fff;
+  width: fit-content;
+  height: fit-content;
+  columns: 2;
+  padding-left: 0.5vw;
+  border-radius: 10px;
+  margin-bottom: 0.5vw;
+  
+}
 
 .options-selector-button {
-  color: #e06344;
+  background-color: #ff7654;
+  color: white;
   font-size: small;
-  background-color: white;
+  
   width: fit-content;
   margin: 5px;
   padding: 0.5vw;
@@ -24,11 +38,13 @@
 .options-selector-button:hover {
   cursor: pointer;
   box-shadow: none;
-  background-color: #ff7654;
-  color: white;
+  color: #e06344;
+  background-color: white;
 }
 
 .checkbox-options-selector-button {
+  margin-left: 1.5vw;
+  margin-bottom: 0.5vw;
   color: white;
   font-size: small;
   background-color: #ff7654;
@@ -57,12 +73,12 @@
 
 .checkbox-selector-button-container {
   display: flex;
-  flex-direction: column;
   font-size: small;
   flex-wrap: wrap;
   align-items: flex-start;
   width: fit-content;
 }
+
 
 .checkbox-message {
   margin-left: 2vw;

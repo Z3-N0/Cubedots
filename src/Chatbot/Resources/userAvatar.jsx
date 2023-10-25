@@ -1,14 +1,16 @@
 import React from "react";
-import Logo from "./user.png";
+// import Logo from "./user.png";
+import { BiSolidUserCircle } from "react-icons/bi";
 
 const BotAvatar = () => {
   return (
     <div>
       <div className="react-chatbot-kit-user-avatar-container">
-        <img src={Logo} alt='user' className="react-chatbot-kit-user-avatar-icon"></img>
+        < BiSolidUserCircle className="react-chatbot-kit-user-avatar-icon"/>
       </div>
     </div>
   );
 };
 
 export default BotAvatar;
+

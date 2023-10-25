@@ -20,16 +20,6 @@ const awsConfig = {
     region: "us-east-1"
   },
   Interactions: {
-    // bots: {
-    //   SampleBot: {
-    //     name: "SampleBot",
-    //     aliasId: "TSTALIASID",
-    //     botId: "JDC2KP6P4J",
-    //     localeId: "en_IN",
-    //     region: "us-east-1",
-    //     providerName: "AWSLexV2Provider",
-    //   },
-    // }
     bots: {
       "demo-bot": {
         name: "demo-bot",
@@ -48,6 +38,17 @@ Amplify.configure(awsConfig);
 const App = () => {
   const [showChatbot, setShowChatbot] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
+
+
+  const saveMessages = (messages, HTMLString) => {
+    localStorage.setItem('chat_messages', JSON.stringify(messages));
+  };
+
+  const loadMessages = () => {
+    console.log("enters")
+    const messages = JSON.parse(localStorage.getItem('chat_messages'));
+    return messages;
+  };
 
   const toggle = () => {
     setShowChatbot(false);
@@ -101,6 +102,9 @@ const App = () => {
                 actionProvider={ActionProvider}
                 headerText={<TitleLogo toggle={toggle} reset={reset} />}
                 validator={validator}
+                messageHistory={loadMessages()}
+                saveMessages={saveMessages}
+                runInitialMessagesWithHistory
               />
             }
           />

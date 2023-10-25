@@ -37,9 +37,8 @@ const FacilitiesTypeSelector = (props) => {
 
   return (
     <div className="checkbox-message">
-      <div className="option-selector-container">
         <Form onFinish={setType}>
-          <div className="checkbox-selector-button-container">
+          <div className="checkbox-selector-container">
             {amenity?.length > 0 ? (
               amenitiesList
             ) : (
@@ -58,7 +57,6 @@ const FacilitiesTypeSelector = (props) => {
           </button>
         </Form>
       </div>
-    </div>
   );
 };
 
